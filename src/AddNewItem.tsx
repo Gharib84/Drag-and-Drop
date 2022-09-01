@@ -1,5 +1,7 @@
 import { AddItemButton } from "./style";
 import { useState } from "react";
+//import new item form 
+import NewItemFormComponent from "./NewItemForm";
 
 //declare props for button as 
 type AddNewItemProps = {
@@ -16,7 +18,12 @@ function AddNewItemComponent(props: AddNewItemProps){
 
         //logic 
         if(showFrom){
-
+            return (
+                <NewItemFormComponent onAdd={(text)=>{
+                    onAdd(text)
+                    setShowForm(false)
+                }} />
+            )
         }
 
     //return 
